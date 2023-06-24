@@ -1,0 +1,13 @@
+local player = game.Players.LocalPlayer
+local chestsFolder = workspace:FindFirstChild("Chests")
+
+if chestsFolder then
+   local chests = chestsFolder:GetChildren()
+
+   for _, chest in ipairs(chests) do
+       if chest:IsA("BasePart") then
+           player.Character.HumanoidRootPart.CFrame = chest.CFrame
+           task.wait()
+       end
+   end
+end
